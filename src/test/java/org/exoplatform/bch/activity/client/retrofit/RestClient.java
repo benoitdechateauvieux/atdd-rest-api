@@ -1,6 +1,7 @@
 package org.exoplatform.bch.activity.client.retrofit;
 
 import org.exoplatform.bch.activity.Activity;
+import retrofit.client.Response;
 import retrofit.http.Body;
 import retrofit.http.GET;
 import retrofit.http.POST;
@@ -17,7 +18,7 @@ public interface RestClient {
     Activity getActivity(@Path("activity") long activityId);
 
     @POST("/activity")
-    Long post(@Body Activity activity);
+    Response post(@Body Activity activity);
 
     @GET("/stream")
     List<Activity> getStream();

@@ -1,9 +1,9 @@
 package org.exoplatform.bch;
 
 import com.wordnik.swagger.jersey.listing.ApiListingResourceJSON;
+import org.exoplatform.bch.activity.ActivityResource;
 import org.exoplatform.bch.stream.StreamResource;
 import org.exoplatform.bch.swagger.JacksonJsonProvider;
-import org.exoplatform.bch.activity.ActivityResource;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

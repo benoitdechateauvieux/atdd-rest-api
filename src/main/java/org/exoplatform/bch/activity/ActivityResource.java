@@ -1,12 +1,13 @@
 package org.exoplatform.bch.activity;
 
 import com.wordnik.swagger.annotations.*;
+import org.apache.commons.lang3.StringUtils;
 import org.exoplatform.bch.stream.StreamStorage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.util.Random;
-import java.util.UUID;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Created by bdechateauvieux on 4/21/15.
@@ -37,11 +38,23 @@ public class ActivityResource {
             response = Long.class,
             notes = "This can only be done by the logged in user.",
             position = 1)
-    @ApiResponse(code = 200, message = "returns the id of the activity")
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Invalid activity supplied"),
+            @ApiResponse(code = 201, message = "returns the id of the activity")
+    })
     public Response createActivity(
             @ApiParam(value = "Created activity object", required = true) Activity activity) {
-        activity.setId(UUID.randomUUID().getMostSignificantBits());
-        StreamStorage.addActivity(activity);
-        return Response.ok().entity(activity.getId()).build();
+        try {
+            if (StringUtils.isBlank(activity.getTitle())) {
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+
+            activity.setId(System.currentTimeMillis());
+            StreamStorage.addActivity(activity);
+            return Response.created(new URI("/api/activity/"+activity.getId())).entity(activity.getId()).build();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return Response.serverError().build();
+        }
     }
 }

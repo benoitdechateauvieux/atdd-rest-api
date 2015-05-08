@@ -5,7 +5,6 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
 import org.exoplatform.bch.activity.Activity;
-import org.exoplatform.bch.stream.StreamStorage;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

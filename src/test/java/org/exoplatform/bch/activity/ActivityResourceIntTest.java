@@ -5,7 +5,9 @@ import org.exoplatform.bch.activity.client.retrofit.RestClient;
 import org.exoplatform.bch.stream.StreamResource;
 import org.glassfish.jersey.jetty.JettyHttpContainerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import retrofit.RestAdapter;
 
 import javax.ws.rs.core.UriBuilder;

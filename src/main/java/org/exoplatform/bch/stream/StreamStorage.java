@@ -10,7 +10,7 @@ import java.util.List;
  * Created by bdechateauvieux on 4/23/15.
  */
 public class StreamStorage {
-    private static final List<Activity> STREAM = new ArrayList<Activity>();
+    private static final List<Activity> STREAM = new ArrayList<>();
 
     public static List<Activity> getStream() {
         return STREAM;

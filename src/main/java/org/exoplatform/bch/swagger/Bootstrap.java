@@ -1,9 +1,6 @@
 package org.exoplatform.bch.swagger;
 
 import com.wordnik.swagger.models.*;
-import com.wordnik.swagger.models.auth.ApiKeyAuthDefinition;
-import com.wordnik.swagger.models.auth.In;
-import com.wordnik.swagger.models.auth.OAuth2Definition;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
