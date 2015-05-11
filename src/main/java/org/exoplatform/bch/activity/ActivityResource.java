@@ -3,6 +3,7 @@ package org.exoplatform.bch.activity;
 import com.wordnik.swagger.annotations.*;
 import org.apache.commons.lang3.StringUtils;
 import org.exoplatform.bch.stream.StreamStorage;
+import org.exoplatform.bch.swagger.ExoApiLevel;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -21,7 +22,7 @@ public class ActivityResource {
     @Path("/{activity}")
     @ApiOperation(value = "Get activity by Id",
             response = Activity.class,
-            notes = "This can only be done by the logged in user.",
+            notes = ExoApiLevel.EXPERIMENTAL + "This can only be done by the logged in user.",
             position = 0)
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "Invalid activity id supplied"),
