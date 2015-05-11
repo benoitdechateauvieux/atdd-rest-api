@@ -22,8 +22,8 @@ Cucumber call the REST API through Retrofit REST Client library
 mvn test
 ```
 
-### API documentation
-The documentation of the REST API is generated with swagger.io.
+### API documentation - Runtime
+The documentation of the REST API is generated at run time by swagger.io.
 
 ```maven
 mvn jetty:run
@@ -34,3 +34,6 @@ Then open in browser:
 
 The JSON swagger file can be found here:
 [http://localhost:8080/swagger.json](http://localhost:8080/swagger.json)
+
+### API documentation - Build time
+The generation of the file swagger.json is also included in the compilation phase thanks to the [swagger-maven-plugin] (https://github.com/kongchen/swagger-maven-plugin)
